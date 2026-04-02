@@ -1,0 +1,6 @@
+Topaz (Amiga system font) — original © Amiga Inc.
+TrueType conversion Topaz_a500_v1.0.ttf © dMG / TrueSchool (t!s^dS!).
+
+Source: https://github.com/rewtnull/amigafonts
+Released under the GNU GPL with the Font Exception
+(https://www.gnu.org/licenses/gpl-faq.html#FontException).

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="UX freelancer — 15+ years in regulated industries (8+ in MedTech); AI strategy, research, design, prototyping, and development." />
+  <title>Workbench — UX &amp; AI Strategy</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect fill='%23e07000' width='32' height='32'/><rect fill='%23fff' x='6' y='8' width='20' height='16' stroke='%23000' stroke-width='1'/></svg>" />
+</head>
+<body>
+  <header class="screen-bar" role="banner">
+    <nav class="screen-bar__menus" aria-label="Site">
+      <a href="#about" class="screen-bar__item">About</a>
+      <a href="#journey" class="screen-bar__item">Journey</a>
+      <a href="#clients" class="screen-bar__item">Clients</a>
+      <a href="#work" class="screen-bar__item">Work</a>
+      <a href="#contact" class="screen-bar__item">Contact</a>
+    </nav>
+    <span class="screen-bar__clock" aria-hidden="true" id="clock"></span>
+  </header>
+
+  <div class="desktop-page">
+    <div class="desktop-page__gutter desktop-page__gutter--start">
+      <div class="desktop-page__side-stack">
+        <div class="desktop-page__trash-wrap">
+          <img
+            class="desktop-page__trash-icon"
+            src="images/icon_trashcan_transparent.png"
+            alt=""
+            width="138"
+            height="124"
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="desktop-page__trash-label">Trashcan</span>
+        </div>
+        <div class="desktop-page__prefs-wrap" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="prefs-dialog">
+          <img
+            class="desktop-page__prefs-icon"
+            src="images/icon_preferences_clean.png"
+            alt=""
+            width="704"
+            height="418"
+            loading="lazy"
+            decoding="async"
+            aria-hidden="true"
+          />
+          <span class="desktop-page__prefs-label">Preferences</span>
+        </div>
+      </div>
+    </div>
+    <main class="desktop" id="about">
+    <section class="wb-window wb-window--hero" aria-labelledby="hero-title">
+      <div class="wb-window__titlebar">
+        <span class="wb-window__gadget wb-window__gadget--close" aria-hidden="true"></span>
+        <h1 class="wb-window__title" id="hero-title">Portfolio.info</h1>
+        <span class="wb-window__gadget wb-window__gadget--depth" aria-hidden="true"></span>
+      </div>
+      <div class="wb-window__body">
+        <p class="lead">
+          <strong>Ingo Pfaff</strong> — freelance UX consultant with a strong focus on <strong>AI strategy</strong>. <br>
+          I take products from first ideation through user research, design, and prototyping to working software — the full journey.
+        </p>
+        <p class="lead lead--tight">
+          <strong>15+ years</strong> experience in complex, regulated environments like <strong>medical technology</strong> (<strong>8+ years</strong>), <strong>pharma</strong>, <strong>science &amp; lab</strong>, <strong>semiconductors</strong>, and others like <strong>automotive</strong>.
+        </p>
+        <img
+          class="hero-portrait"
+          src="images/portrait.png"
+          alt="Portrait of Ingo Pfaff"
+          width="1024"
+          height="1024"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </section>
+
+    <section class="wb-window" id="journey" aria-labelledby="journey-title">
+      <div class="wb-window__titlebar wb-window__titlebar--inactive">
+        <span class="wb-window__gadget wb-window__gadget--close" aria-hidden="true"></span>
+        <h2 class="wb-window__title" id="journey-title">The_Journey.drawer</h2>
+        <span class="wb-window__gadget wb-window__gadget--depth" aria-hidden="true"></span>
+      </div>
+      <div class="wb-window__body">
+        <ul class="drawer-list">
+          <li><span class="icon-disk" aria-hidden="true"></span> <strong>Ideation &amp; framing</strong> — problem space, outcomes, and AI-native opportunities.</li>
+          <li><span class="icon-disk" aria-hidden="true"></span> <strong>User research</strong> — interviews, testing, synthesis into actionable models.</li>
+          <li><span class="icon-disk" aria-hidden="true"></span> <strong>Design</strong> — flows, information architecture, and interaction patterns.</li>
+          <li><span class="icon-disk" aria-hidden="true"></span> <strong>Prototyping</strong> — clickable prototypes and validation loops.</li>
+          <li><span class="icon-disk" aria-hidden="true"></span> <strong>Development</strong> — shipping real product, not only decks and Figma files.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="wb-window" id="clients" aria-labelledby="clients-title">
+      <div class="wb-window__titlebar">
+        <span class="wb-window__gadget wb-window__gadget--close" aria-hidden="true"></span>
+        <h2 class="wb-window__title" id="clients-title">Trusted_by</h2>
+        <span class="wb-window__gadget wb-window__gadget--depth" aria-hidden="true"></span>
+      </div>
+      <div class="wb-window__body">
+        <aside class="guru-banner" role="note" aria-label="Work in progress">
+          <p class="guru-banner__head">Details coming soon... Work in progress...</p>
+          <p class="guru-banner__guru">Guru Meditation #13thf00r3l3v4t0r5</p>
+        </aside>
+        <p class="muted">
+          A few of the organisations I work with most often. Logos and names appear only where usage is agreed.
+        </p>
+        <!-- Swap files in logos/client-01…08 (SVG or PNG — update src extension if needed) and edit each figcaption. -->
+        <ul class="customer-logos">
+          <li>
+            <figure class="customer-logos__item">
+              <div class="customer-logos__frame">
+                <img src="logos/client-01.svg" alt="" width="160" height="64" loading="lazy" decoding="async" />
+              </div>
+              <figcaption class="customer-logos__name">Client name</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="customer-logos__item">
+              <div class="customer-logos__frame">
+                <img src="logos/client-02.svg" alt="" width="160" height="64" loading="lazy" decoding="async" />
+              </div>
+              <figcaption class="customer-logos__name">Client name</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="customer-logos__item">
+              <div class="customer-logos__frame">
+                <img src="logos/client-03.svg" alt="" width="160" height="64" loading="lazy" decoding="async" />
+              </div>
+              <figcaption class="customer-logos__name">Client name</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="customer-logos__item">
+              <div class="customer-logos__frame">
+                <img src="logos/client-04.svg" alt="" width="160" height="64" loading="lazy" decoding="async" />
+              </div>
+              <figcaption class="customer-logos__name">Client name</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="customer-logos__item">
+              <div class="customer-logos__frame">
+                <img src="logos/client-05.svg" alt="" width="160" height="64" loading="lazy" decoding="async" />
+              </div>
+              <figcaption class="customer-logos__name">Client name</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="customer-logos__item">
+              <div class="customer-logos__frame">
+                <img src="logos/client-06.svg" alt="" width="160" height="64" loading="lazy" decoding="async" />
+              </div>
+              <figcaption class="customer-logos__name">Client name</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="customer-logos__item">
+              <div class="customer-logos__frame">
+                <img src="logos/client-07.svg" alt="" width="160" height="64" loading="lazy" decoding="async" />
+              </div>
+              <figcaption class="customer-logos__name">Client name</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="customer-logos__item">
+              <div class="customer-logos__frame">
+                <img src="logos/client-08.svg" alt="" width="160" height="64" loading="lazy" decoding="async" />
+              </div>
+              <figcaption class="customer-logos__name">Client name</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="wb-window" id="work" aria-labelledby="work-title">
+      <div class="wb-window__titlebar wb-window__titlebar--inactive">
+        <span class="wb-window__gadget wb-window__gadget--close" aria-hidden="true"></span>
+        <h2 class="wb-window__title" id="work-title">Projects</h2>
+        <span class="wb-window__gadget wb-window__gadget--depth" aria-hidden="true"></span>
+      </div>
+      <div class="wb-window__body">
+        <aside class="guru-banner" role="note" aria-label="Work in progress">
+          <p class="guru-banner__head">Details coming soon... Work in progress...</p>
+          <p class="guru-banner__guru">Guru Meditation #ilik3t0m0v3itm0v3it</p>
+        </aside>
+        <p>
+          Much of my recent work is under <strong>NDA</strong>. Below are anonymised snapshots you can swap for public case studies when available.
+        </p>
+        <div class="project-cards">
+          <article class="project-card">
+            <h3>AI-assisted workflow</h3>
+            <p>Strategy and UX for a B2B tool integrating generative AI into an existing professional workflow — research through MVP UI and handoff.</p>
+          </article>
+          <article class="project-card">
+            <h3>Research &amp; design system</h3>
+            <p>User research programme and component patterns for a complex data-heavy application; prototypes used in procurement and build.</p>
+          </article>
+          <article class="project-card">
+            <h3>End-to-end product slice</h3>
+            <p>From discovery workshops to live feature: interviews, flows, high-fidelity prototype, and frontend implementation in the team codebase.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="wb-window wb-window--contact" id="contact" aria-labelledby="contact-title">
+      <div class="wb-window__titlebar">
+        <span class="wb-window__gadget wb-window__gadget--close" aria-hidden="true"></span>
+        <h2 class="wb-window__title" id="contact-title">Contact.req</h2>
+        <span class="wb-window__gadget wb-window__gadget--depth" aria-hidden="true"></span>
+      </div>
+      <div class="wb-window__body">
+        <p>
+          For collaborations, AI / UX strategy, or a full-lane product engagement — get in touch.
+        </p>
+        <p class="contact-line">
+          <a class="wb-button" href="mailto:ux@ingopfaff.de">Send e-mail</a>
+        </p>
+      </div>
+    </section>
+    </main>
+    <div class="desktop-page__gutter desktop-page__gutter--end">
+      <div class="desktop-page__end-stack">
+        <div class="desktop-page__icon-wrap">
+          <img
+            class="desktop-page__icon"
+            src="images/icon_clean.png"
+            alt=""
+            width="1156"
+            height="804"
+            loading="lazy"
+            decoding="async"
+            aria-hidden="true"
+          />
+          <span class="desktop-page__label">Say</span>
+        </div>
+        <div
+          class="desktop-page__secret-wrap"
+          role="button"
+          tabindex="0"
+          aria-haspopup="dialog"
+          aria-controls="secret-dialog"
+        >
+          <img
+            class="desktop-page__secret-icon"
+            src="images/icon_drawer1_clean.png"
+            alt=""
+            width="378"
+            height="146"
+            loading="lazy"
+            decoding="async"
+            aria-hidden="true"
+          />
+          <span class="desktop-page__secret-label">Secret</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="status-bar" role="contentinfo">
+    <span>1 device online</span>
+    <span>RAM: plenty</span>
+    <span>UX · AI · Code</span>
+  </footer>
+
+  <div id="say-dialog-backdrop" class="wb-dialog-backdrop" hidden aria-hidden="true">
+    <div
+      class="wb-dialog wb-window"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="say-dialog-title"
+    >
+      <div class="wb-window__titlebar">
+        <button type="button" class="wb-dialog__close" aria-label="Close dialog">
+          <span class="wb-dialog__close-x" aria-hidden="true">×</span>
+        </button>
+        <h2 class="wb-window__title" id="say-dialog-title">Say</h2>
+      </div>
+      <div class="wb-window__body wb-dialog__body">
+        <label for="say-dialog-input" class="wb-dialog__label">Message</label>
+        <input
+          type="text"
+          id="say-dialog-input"
+          class="wb-dialog__input"
+          name="say-message"
+          autocomplete="off"
+          maxlength="2000"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div id="prefs-dialog-backdrop" class="wb-dialog-backdrop" hidden aria-hidden="true">
+    <div
+      id="prefs-dialog"
+      class="wb-dialog wb-window"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="prefs-dialog-title"
+    >
+      <div class="wb-window__titlebar">
+        <button type="button" class="wb-dialog__close" aria-label="Close dialog">
+          <span class="wb-dialog__close-x" aria-hidden="true">×</span>
+        </button>
+        <h2 class="wb-window__title" id="prefs-dialog-title">Preferences</h2>
+      </div>
+      <div class="wb-window__body wb-dialog__body wb-dialog__body--prefs">
+        <ul class="wb-dialog__prefs-list">
+          <li>Albert Ayler</li>
+          <li>John Coltrane</li>
+          <li>Cecil Taylor</li>
+          <li>13th Floor Elevators</li>
+          <li>A Tribe Called Quest</li>
+          <li>Grateful Dead</li>
+          <li>Death Metal</li>
+          <li>Wonder Years</li>
+          <li>Hunter S. Thompson</li>
+          <li>John Waters</li>
+          <li>Acid House</li>
+          <li>Shoegaze</li>
+          <li>Happy Mondays</li>
+          <li>to be continued…</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="secret-dialog-backdrop" class="wb-dialog-backdrop" hidden aria-hidden="true">
+    <div
+      id="secret-dialog"
+      class="wb-dialog wb-window wb-dialog--secret"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="secret-dialog-title"
+    >
+      <div class="wb-window__titlebar">
+        <button type="button" class="wb-dialog__close" aria-label="Close dialog">
+          <span class="wb-dialog__close-x" aria-hidden="true">×</span>
+        </button>
+        <h2 class="wb-window__title" id="secret-dialog-title">Secret</h2>
+      </div>
+      <div class="wb-window__body wb-dialog__body wb-dialog__body--secret">
+        <img
+          class="wb-dialog__secret-img"
+          src="images/secret.png"
+          alt="Secret"
+          width="1536"
+          height="1024"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Retro TTS: SAM (Software Automatic Mouth), sam-js — github.com/discordier/sam -->
+  <script src="vendor/samjs.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
