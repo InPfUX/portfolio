@@ -41,8 +41,6 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  /* Space for fixed .site-footer (status bar + legal row) + notched devices */
-  padding-bottom: calc(6.25rem + env(safe-area-inset-bottom, 0px));
   font-family: var(--font-topaz);
   font-size: 16px;
   line-height: 24px;
@@ -587,17 +585,13 @@ strong {
   padding: 9px 15px 7px 17px;
 }
 
-/* Site footer — Workbench status bar + legal row (fixed; body has padding-bottom) */
+/* Site footer — Workbench status bar + legal row (scrolls with page) */
 .site-footer {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 90;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  margin-top: auto;
 }
 
 /* Status bar */
@@ -623,7 +617,7 @@ strong {
   gap: 6px 12px;
   width: 100%;
   margin: 0;
-  padding: 8px 12px calc(10px + env(safe-area-inset-bottom, 0px));
+  padding: 8px 12px 12px;
   box-sizing: border-box;
   font-family: var(--font-topaz);
   font-size: 16px;
@@ -735,6 +729,12 @@ strong {
 .legal-doc ul {
   margin: 0 0 1rem;
   padding-left: 1.25rem;
+}
+
+.legal-doc hr {
+  border: 0;
+  border-top: 1px solid var(--wb-border-mid);
+  margin: 1.35rem 0;
 }
 
 .legal-doc .legal-note {
