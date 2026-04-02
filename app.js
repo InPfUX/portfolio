@@ -26,9 +26,41 @@
   }
 
   var input = document.getElementById("say-dialog-input");
-  var iconWrap = document.querySelector(".desktop-page__icon-wrap");
-  var prefsWrap = document.querySelector(".desktop-page__prefs-wrap");
-  var secretWrap = document.querySelector(".desktop-page__secret-wrap");
+  var lastPrefsTrigger = null;
+  var lastSecretTrigger = null;
+
+  function isTriggerVisible(el) {
+    if (!el || !document.contains(el)) return false;
+    return el.offsetParent !== null;
+  }
+
+  function focusPrefsTrigger() {
+    if (isTriggerVisible(lastPrefsTrigger)) {
+      lastPrefsTrigger.focus();
+      return;
+    }
+    var prefsNodes = document.querySelectorAll(".desktop-page__prefs-wrap");
+    for (var i = 0; i < prefsNodes.length; i++) {
+      if (isTriggerVisible(prefsNodes[i])) {
+        prefsNodes[i].focus();
+        return;
+      }
+    }
+  }
+
+  function focusSecretTrigger() {
+    if (isTriggerVisible(lastSecretTrigger)) {
+      lastSecretTrigger.focus();
+      return;
+    }
+    var secretNodes = document.querySelectorAll(".desktop-page__secret-wrap");
+    for (var j = 0; j < secretNodes.length; j++) {
+      if (isTriggerVisible(secretNodes[j])) {
+        secretNodes[j].focus();
+        return;
+      }
+    }
+  }
   var sayCloseBtn = sayBackdrop
     ? sayBackdrop.querySelector(".wb-dialog__close")
     : null;
@@ -71,9 +103,7 @@
     prefsBackdrop.hidden = true;
     prefsBackdrop.setAttribute("aria-hidden", "true");
     syncModalScrollLock();
-    if (prefsWrap) {
-      prefsWrap.focus();
-    }
+    focusPrefsTrigger();
   }
 
   function openSecretDialog() {
@@ -91,41 +121,43 @@
     secretBackdrop.hidden = true;
     secretBackdrop.setAttribute("aria-hidden", "true");
     syncModalScrollLock();
-    if (secretWrap) {
-      secretWrap.focus();
-    }
+    focusSecretTrigger();
   }
 
-  if (iconWrap) {
-    iconWrap.addEventListener("click", function (e) {
+  document.querySelectorAll(".desktop-page__icon-wrap").forEach(function (el) {
+    el.addEventListener("click", function (e) {
       e.preventDefault();
       openSayDialog();
     });
-  }
+  });
 
-  if (prefsWrap) {
-    prefsWrap.addEventListener("click", function (e) {
+  document.querySelectorAll(".desktop-page__prefs-wrap").forEach(function (el) {
+    el.addEventListener("click", function (e) {
       e.preventDefault();
+      lastPrefsTrigger = el;
       openPrefsDialog();
     });
-    prefsWrap.addEventListener("keydown", function (e) {
+    el.addEventListener("keydown", function (e) {
       if (e.key !== "Enter" && e.key !== " ") return;
       e.preventDefault();
+      lastPrefsTrigger = el;
       openPrefsDialog();
     });
-  }
+  });
 
-  if (secretWrap) {
-    secretWrap.addEventListener("click", function (e) {
+  document.querySelectorAll(".desktop-page__secret-wrap").forEach(function (el) {
+    el.addEventListener("click", function (e) {
       e.preventDefault();
+      lastSecretTrigger = el;
       openSecretDialog();
     });
-    secretWrap.addEventListener("keydown", function (e) {
+    el.addEventListener("keydown", function (e) {
       if (e.key !== "Enter" && e.key !== " ") return;
       e.preventDefault();
+      lastSecretTrigger = el;
       openSecretDialog();
     });
-  }
+  });
 
   if (sayCloseBtn) {
     sayCloseBtn.addEventListener("click", function (e) {

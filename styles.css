@@ -104,6 +104,16 @@ strong {
   outline: none;
 }
 
+.screen-bar__item--mobile-only {
+  display: none;
+}
+
+@media (max-width: 959px) {
+  .screen-bar__item--mobile-only {
+    display: block;
+  }
+}
+
 .screen-bar__clock {
   font-size: 16px;
   line-height: 16px;
@@ -137,7 +147,93 @@ strong {
   gap: 16px;
 }
 
+/* Side gutters + mobile System strip — shared icon tiles */
+.desktop-page__trash-wrap,
+.desktop-page__prefs-wrap,
+.desktop-page__icon-wrap,
+.desktop-page__secret-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.desktop-page__prefs-wrap,
+.desktop-page__icon-wrap,
+.desktop-page__secret-wrap {
+  cursor: pointer;
+}
+
+.desktop-page__prefs-wrap:focus,
+.desktop-page__secret-wrap:focus {
+  outline: none;
+}
+
+.desktop-page__prefs-wrap:focus-visible,
+.desktop-page__secret-wrap:focus-visible {
+  outline: 2px solid var(--wb-title-active);
+  outline-offset: 4px;
+}
+
+.desktop-page__icon,
+.desktop-page__trash-icon,
+.desktop-page__prefs-icon,
+.desktop-page__secret-icon {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 88px;
+}
+
+.desktop-page__icon,
+.desktop-page__prefs-icon,
+.desktop-page__secret-icon {
+  pointer-events: none;
+}
+
+.desktop-page__label,
+.desktop-page__trash-label,
+.desktop-page__prefs-label,
+.desktop-page__secret-label {
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 16px;
+  color: var(--wb-text);
+  text-shadow: 1px 1px 0 var(--wb-border-light);
+}
+
+.system-strip .desktop-page__label,
+.system-strip .desktop-page__trash-label,
+.system-strip .desktop-page__prefs-label,
+.system-strip .desktop-page__secret-label {
+  text-shadow: none;
+}
+
+/* Mobile-only: System window below Contact */
+.system-strip__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 16px;
+  justify-items: center;
+  align-items: start;
+}
+
+.system-strip__cell {
+  margin: 0;
+  width: 100%;
+  max-width: 140px;
+  justify-self: center;
+}
+
 @media (min-width: 960px) {
+  .system-strip {
+    display: none !important;
+  }
+
   .desktop-page {
     flex-direction: row;
     align-items: stretch;
@@ -186,82 +282,6 @@ strong {
     gap: 28px;
     width: 100%;
     max-width: 120px;
-  }
-
-  .desktop-page__trash-wrap,
-  .desktop-page__prefs-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-  }
-
-  .desktop-page__prefs-wrap {
-    cursor: pointer;
-  }
-
-  .desktop-page__prefs-wrap:focus {
-    outline: none;
-  }
-
-  .desktop-page__prefs-wrap:focus-visible {
-    outline: 2px solid var(--wb-title-active);
-    outline-offset: 4px;
-  }
-
-  .desktop-page__icon-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    cursor: pointer;
-  }
-
-  .desktop-page__secret-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    cursor: pointer;
-  }
-
-  .desktop-page__secret-wrap:focus {
-    outline: none;
-  }
-
-  .desktop-page__secret-wrap:focus-visible {
-    outline: 2px solid var(--wb-title-active);
-    outline-offset: 4px;
-  }
-
-  .desktop-page__icon,
-  .desktop-page__trash-icon,
-  .desktop-page__prefs-icon,
-  .desktop-page__secret-icon {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-width: 88px;
-  }
-
-  .desktop-page__icon,
-  .desktop-page__prefs-icon,
-  .desktop-page__secret-icon {
-    pointer-events: none;
-  }
-
-  .desktop-page__label,
-  .desktop-page__trash-label,
-  .desktop-page__prefs-label,
-  .desktop-page__secret-label {
-    margin-top: 8px;
-    font-size: 16px;
-    line-height: 16px;
-    color: var(--wb-text);
-    text-shadow: 1px 1px 0 var(--wb-border-light);
   }
 }
 

@@ -16,6 +16,7 @@
       <a href="#clients" class="screen-bar__item">Clients</a>
       <a href="#work" class="screen-bar__item">Work</a>
       <a href="#contact" class="screen-bar__item">Contact</a>
+      <a href="#system" class="screen-bar__item screen-bar__item--mobile-only">System</a>
     </nav>
     <span class="screen-bar__clock" aria-hidden="true" id="clock"></span>
   </header>
@@ -224,6 +225,83 @@
         </p>
       </div>
     </section>
+
+    <section class="wb-window system-strip" id="system" aria-labelledby="system-title">
+      <div class="wb-window__titlebar wb-window__titlebar--inactive">
+        <span class="wb-window__gadget wb-window__gadget--close" aria-hidden="true"></span>
+        <h2 class="wb-window__title" id="system-title">System</h2>
+        <span class="wb-window__gadget wb-window__gadget--depth" aria-hidden="true"></span>
+      </div>
+      <div class="wb-window__body system-strip__body">
+        <ul class="system-strip__grid">
+          <li class="system-strip__cell">
+            <div class="desktop-page__trash-wrap">
+              <img
+                class="desktop-page__trash-icon"
+                src="images/icon_trashcan_transparent.png"
+                alt=""
+                width="138"
+                height="124"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="desktop-page__trash-label">Trashcan</span>
+            </div>
+          </li>
+          <li class="system-strip__cell">
+            <div class="desktop-page__prefs-wrap" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="prefs-dialog">
+              <img
+                class="desktop-page__prefs-icon"
+                src="images/icon_preferences_clean.png"
+                alt=""
+                width="704"
+                height="418"
+                loading="lazy"
+                decoding="async"
+                aria-hidden="true"
+              />
+              <span class="desktop-page__prefs-label">Preferences</span>
+            </div>
+          </li>
+          <li class="system-strip__cell">
+            <div class="desktop-page__icon-wrap">
+              <img
+                class="desktop-page__icon"
+                src="images/icon_clean.png"
+                alt=""
+                width="1156"
+                height="804"
+                loading="lazy"
+                decoding="async"
+                aria-hidden="true"
+              />
+              <span class="desktop-page__label">Say</span>
+            </div>
+          </li>
+          <li class="system-strip__cell">
+            <div
+              class="desktop-page__secret-wrap"
+              role="button"
+              tabindex="0"
+              aria-haspopup="dialog"
+              aria-controls="secret-dialog"
+            >
+              <img
+                class="desktop-page__secret-icon"
+                src="images/icon_drawer1_clean.png"
+                alt=""
+                width="378"
+                height="146"
+                loading="lazy"
+                decoding="async"
+                aria-hidden="true"
+              />
+              <span class="desktop-page__secret-label">Secret</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
     </main>
     <div class="desktop-page__gutter desktop-page__gutter--end">
       <div class="desktop-page__end-stack">
@@ -326,6 +404,7 @@
           <li>Shoegaze</li>
           <li>Happy Mondays</li>
           <li>New Order</li>
+          <li>Krautrock</li>
           <li>American Football (49ers, Titans, Steelers)</li>
           <li>Baseball (Diamondbacks, Orioles, Angels)</li>
           <li>to be continued…</li>
