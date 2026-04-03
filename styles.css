@@ -161,17 +161,20 @@ strong {
 
 .desktop-page__prefs-wrap,
 .desktop-page__icon-wrap,
-.desktop-page__secret-wrap {
+.desktop-page__secret-wrap,
+.desktop-page__trash-wrap {
   cursor: pointer;
 }
 
 .desktop-page__prefs-wrap:focus,
-.desktop-page__secret-wrap:focus {
+.desktop-page__secret-wrap:focus,
+.desktop-page__trash-wrap:focus {
   outline: none;
 }
 
 .desktop-page__prefs-wrap:focus-visible,
-.desktop-page__secret-wrap:focus-visible {
+.desktop-page__secret-wrap:focus-visible,
+.desktop-page__trash-wrap:focus-visible {
   outline: 2px solid var(--wb-title-active);
   outline-offset: 4px;
 }
@@ -187,6 +190,7 @@ strong {
 }
 
 .desktop-page__icon,
+.desktop-page__trash-icon,
 .desktop-page__prefs-icon,
 .desktop-page__secret-icon {
   pointer-events: none;
@@ -770,6 +774,10 @@ strong {
   z-index: 210;
 }
 
+#trash-dialog-backdrop {
+  z-index: 218;
+}
+
 #secret-dialog-backdrop {
   z-index: 220;
 }
@@ -928,4 +936,28 @@ strong {
   height: auto;
   max-height: min(78vh, 820px);
   object-fit: contain;
+}
+
+.wb-dialog--trash.wb-window {
+  width: auto;
+  min-width: 0;
+  max-width: min(280px, calc(100vw - 32px));
+}
+
+.wb-dialog__body.wb-dialog__body--trash {
+  flex: 0 0 auto;
+  margin: 4px;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wb-dialog__trash-face {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }

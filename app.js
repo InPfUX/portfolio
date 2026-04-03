@@ -15,18 +15,21 @@
 (function () {
   var sayBackdrop = document.getElementById("say-dialog-backdrop");
   var prefsBackdrop = document.getElementById("prefs-dialog-backdrop");
+  var trashBackdrop = document.getElementById("trash-dialog-backdrop");
   var secretBackdrop = document.getElementById("secret-dialog-backdrop");
 
   function syncModalScrollLock() {
     var locked =
       (sayBackdrop && !sayBackdrop.hidden) ||
       (prefsBackdrop && !prefsBackdrop.hidden) ||
+      (trashBackdrop && !trashBackdrop.hidden) ||
       (secretBackdrop && !secretBackdrop.hidden);
     document.body.style.overflow = locked ? "hidden" : "";
   }
 
   var input = document.getElementById("say-dialog-input");
   var lastPrefsTrigger = null;
+  var lastTrashTrigger = null;
   var lastSecretTrigger = null;
 
   function isTriggerVisible(el) {
@@ -43,6 +46,20 @@
     for (var i = 0; i < prefsNodes.length; i++) {
       if (isTriggerVisible(prefsNodes[i])) {
         prefsNodes[i].focus();
+        return;
+      }
+    }
+  }
+
+  function focusTrashTrigger() {
+    if (isTriggerVisible(lastTrashTrigger)) {
+      lastTrashTrigger.focus();
+      return;
+    }
+    var trashNodes = document.querySelectorAll(".desktop-page__trash-wrap");
+    for (var t = 0; t < trashNodes.length; t++) {
+      if (isTriggerVisible(trashNodes[t])) {
+        trashNodes[t].focus();
         return;
       }
     }
@@ -66,6 +83,9 @@
     : null;
   var prefsCloseBtn = prefsBackdrop
     ? prefsBackdrop.querySelector(".wb-dialog__close")
+    : null;
+  var trashCloseBtn = trashBackdrop
+    ? trashBackdrop.querySelector(".wb-dialog__close")
     : null;
   var secretCloseBtn = secretBackdrop
     ? secretBackdrop.querySelector(".wb-dialog__close")
@@ -104,6 +124,24 @@
     prefsBackdrop.setAttribute("aria-hidden", "true");
     syncModalScrollLock();
     focusPrefsTrigger();
+  }
+
+  function openTrashDialog() {
+    if (!trashBackdrop) return;
+    trashBackdrop.hidden = false;
+    trashBackdrop.setAttribute("aria-hidden", "false");
+    syncModalScrollLock();
+    if (trashCloseBtn) {
+      trashCloseBtn.focus();
+    }
+  }
+
+  function closeTrashDialog() {
+    if (!trashBackdrop) return;
+    trashBackdrop.hidden = true;
+    trashBackdrop.setAttribute("aria-hidden", "true");
+    syncModalScrollLock();
+    focusTrashTrigger();
   }
 
   function openSecretDialog() {
@@ -145,6 +183,20 @@
     });
   });
 
+  document.querySelectorAll(".desktop-page__trash-wrap").forEach(function (el) {
+    el.addEventListener("click", function (e) {
+      e.preventDefault();
+      lastTrashTrigger = el;
+      openTrashDialog();
+    });
+    el.addEventListener("keydown", function (e) {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      e.preventDefault();
+      lastTrashTrigger = el;
+      openTrashDialog();
+    });
+  });
+
   document.querySelectorAll(".desktop-page__secret-wrap").forEach(function (el) {
     el.addEventListener("click", function (e) {
       e.preventDefault();
@@ -175,6 +227,14 @@
     });
   }
 
+  if (trashCloseBtn) {
+    trashCloseBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      closeTrashDialog();
+    });
+  }
+
   if (secretCloseBtn) {
     secretCloseBtn.addEventListener("click", function (e) {
       e.preventDefault();
@@ -199,6 +259,14 @@
     });
   }
 
+  if (trashBackdrop) {
+    trashBackdrop.addEventListener("click", function (e) {
+      if (e.target === trashBackdrop) {
+        closeTrashDialog();
+      }
+    });
+  }
+
   if (secretBackdrop) {
     secretBackdrop.addEventListener("click", function (e) {
       if (e.target === secretBackdrop) {
@@ -212,6 +280,11 @@
     if (secretBackdrop && !secretBackdrop.hidden) {
       e.preventDefault();
       closeSecretDialog();
+      return;
+    }
+    if (trashBackdrop && !trashBackdrop.hidden) {
+      e.preventDefault();
+      closeTrashDialog();
       return;
     }
     if (prefsBackdrop && !prefsBackdrop.hidden) {

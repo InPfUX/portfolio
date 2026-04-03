@@ -24,7 +24,13 @@
   <div class="desktop-page">
     <div class="desktop-page__gutter desktop-page__gutter--start">
       <div class="desktop-page__side-stack">
-        <div class="desktop-page__trash-wrap">
+        <div
+          class="desktop-page__trash-wrap"
+          role="button"
+          tabindex="0"
+          aria-haspopup="dialog"
+          aria-controls="trash-dialog"
+        >
           <img
             class="desktop-page__trash-icon"
             src="images/icon_trashcan_transparent.png"
@@ -33,8 +39,9 @@
             height="124"
             loading="lazy"
             decoding="async"
+            aria-hidden="true"
           />
-          <span class="desktop-page__trash-label">Trashcan</span>
+          <span class="desktop-page__trash-label">Thrashcan</span>
         </div>
         <div class="desktop-page__prefs-wrap" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="prefs-dialog">
           <img
@@ -235,7 +242,13 @@
       <div class="wb-window__body system-strip__body">
         <ul class="system-strip__grid">
           <li class="system-strip__cell">
-            <div class="desktop-page__trash-wrap">
+            <div
+              class="desktop-page__trash-wrap"
+              role="button"
+              tabindex="0"
+              aria-haspopup="dialog"
+              aria-controls="trash-dialog"
+            >
               <img
                 class="desktop-page__trash-icon"
                 src="images/icon_trashcan_transparent.png"
@@ -244,8 +257,9 @@
                 height="124"
                 loading="lazy"
                 decoding="async"
+                aria-hidden="true"
               />
-              <span class="desktop-page__trash-label">Trashcan</span>
+              <span class="desktop-page__trash-label">Thrashcan</span>
             </div>
           </li>
           <li class="system-strip__cell">
@@ -400,10 +414,12 @@
           <li>Albert Ayler</li>
           <li>John Coltrane</li>
           <li>Cecil Taylor</li>
+          <li>Sun Ra</li>
+          <li>Terry Riley</li>
           <li>13th Floor Elevators</li>
           <li>A Tribe Called Quest</li>
           <li>Grateful Dead</li>
-          <li>Death Metal</li>
+          <li>Death & Thrash Metal</li>
           <li>Wonder Years</li>
           <li>Hunter S. Thompson</li>
           <li>John Waters</li>
@@ -414,8 +430,41 @@
           <li>Krautrock</li>
           <li>American Football (49ers, Titans, Steelers)</li>
           <li>Baseball (Diamondbacks, Orioles, Angels)</li>
+          <li>I. Astalos</li>
+          <li>F. Ibanez</li>
+          <li>Family Guy</li>
+          <li>Parker Lewis</li>
+          <li>Sierra Adventures</li>
           <li>to be continued…</li>
         </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="trash-dialog-backdrop" class="wb-dialog-backdrop" hidden aria-hidden="true">
+    <div
+      id="trash-dialog"
+      class="wb-dialog wb-window wb-dialog--trash"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="trash-dialog-title"
+    >
+      <div class="wb-window__titlebar">
+        <button type="button" class="wb-dialog__close" aria-label="Close dialog">
+          <span class="wb-dialog__close-x" aria-hidden="true">×</span>
+        </button>
+        <h2 class="wb-window__title" id="trash-dialog-title">Thrash</h2>
+      </div>
+      <div class="wb-window__body wb-dialog__body wb-dialog__body--trash">
+        <img
+          class="wb-dialog__trash-face"
+          src="images/pixel_face_less_chunky.png"
+          alt=""
+          width="256"
+          height="256"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
     </div>
   </div>
