@@ -433,8 +433,7 @@ strong {
   border: 1px solid #204060;
 }
 
-/* Guru Meditation style WIP banner (Trusted_by, Projects) */
-#clients .guru-banner,
+/* Guru Meditation style WIP banner (Projects) */
 #work .guru-banner {
   --guru-red: #c02020;
   width: 100%;
@@ -449,7 +448,6 @@ strong {
     1px 1px 0 var(--wb-border-mid);
 }
 
-#clients .guru-banner__head,
 #work .guru-banner__head {
   margin: 0 0 12px;
   padding: 0;
@@ -460,7 +458,6 @@ strong {
   color: inherit;
 }
 
-#clients .guru-banner__guru,
 #work .guru-banner__guru {
   margin: 0;
   padding: 0;
@@ -493,11 +490,15 @@ strong {
 
 .customer-logos__frame {
   width: 100%;
-  min-height: 56px;
+  --logo-frame-h: 116px;
+  --logo-frame-pad-y: 5px;
+  --logo-frame-pad-x: 8px;
+  height: var(--logo-frame-h);
+  min-height: var(--logo-frame-h);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 12px;
+  padding: var(--logo-frame-pad-y) var(--logo-frame-pad-x);
   background: #e8e8e8;
   border: 1px solid var(--wb-border-mid);
   box-shadow: inset 1px 1px 0 var(--wb-border-light);
@@ -505,11 +506,37 @@ strong {
 
 .customer-logos__frame img {
   max-width: 100%;
-  max-height: 48px;
+  max-height: calc(var(--logo-frame-h) - 2 * var(--logo-frame-pad-y));
   width: auto;
   height: auto;
   object-fit: contain;
   object-position: center;
+}
+
+/* Same frame size as other tiles; logo scaled up and cropped (cover) so it reads larger */
+.customer-logos__frame--shs {
+  display: block;
+  overflow: hidden;
+}
+
+.customer-logos__frame--shs img {
+  display: block;
+  width: 100%;
+  height: calc(var(--logo-frame-h) - 2 * var(--logo-frame-pad-y));
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.customer-logos__placeholder-text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: var(--wb-muted);
+  text-shadow: 1px 1px 0 var(--wb-border-light);
+  max-width: 100%;
 }
 
 .customer-logos__name {
@@ -523,7 +550,7 @@ strong {
 
 @media (min-width: 520px) {
   .customer-logos {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
